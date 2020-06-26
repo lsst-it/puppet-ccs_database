@@ -19,7 +19,7 @@ class ccs_database (
     '/home',
   ].filter |$disk| { $facts['mountpoints'][$disk] }
 
-  $datadir0 = pick($datadirs[0], '/home')
+  $datadir0 = pick_default($datadirs[0], '/home')
   $datadir = "${datadir0}/mysql"
   $socket = "${datadir}/mysql.sock"
 
