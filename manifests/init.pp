@@ -23,14 +23,6 @@ class ccs_database (
   $datadir = "${datadir0}/mysql"
   $socket = "${datadir}/mysql.sock"
 
-  file { $datadir:
-    ensure => directory,
-    owner  => 'mysql',
-    group  => 'mysql',
-    mode   => '0755',
-  }
-
-
   $options = {
     'mysqld' => {
       'datadir'                 => $datadir,
