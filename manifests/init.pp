@@ -1,11 +1,13 @@
-## @summary
-##   Install sql database service.
-##
-## @param database
-##   String giving name of database to init.
-## @param password
-##   String giving database password
-
+#
+# @summary
+#   Install sql database service.
+#
+# @param database
+#   Name of database to init.
+#
+# @param password
+#   database password for `ccs` user.
+#
 class ccs_database (
   Optional[String] $database = undef,
   Optional[String] $password = '',
