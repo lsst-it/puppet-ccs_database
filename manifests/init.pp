@@ -7,7 +7,7 @@
 ##   String giving database password
 
 class ccs_database (
-  Optional[String] $database,
+  Optional[String] $database = undef,
   Optional[String] $password = '',
 ) {
 
