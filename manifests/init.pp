@@ -61,6 +61,7 @@ class ccs_database (
 
 
 
+  # XXX this would be better in a site profile
   if empty($password) {
     ## This only happens at slac. Elsewhere, we use private hiera.
     $ccs_dbarchive = lookup('ccs_dbarchive', String)
