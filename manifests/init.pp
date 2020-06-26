@@ -11,6 +11,7 @@ class ccs_database (
   Optional[String] $password = '',
 ) {
 
+  # XXX this would be better in a site profile
   ## Use first mountpoint that exists, else /home/mysql. TODO hiera?
   $datadirs = [
     '/lsst-ir2db01',
@@ -18,7 +19,7 @@ class ccs_database (
     '/home'
   ].filter |$disk| { $facts['mountpoints'][$disk] }
 
-  $datadir0 = pick($datadirs[0], '/home')
+  $datadir0 = pick_default($datadirs[0], '/home')
   $datadir = "${datadir0}/mysql"
   $socket = "${datadir}/mysql.sock"
 
