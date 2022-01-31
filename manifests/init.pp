@@ -24,10 +24,11 @@ class ccs_database (
   $socket = "${datadir}/mysql.sock"
 
   file { $datadir:
-    ensure => directory,
-    owner  => 'mysql',
-    group  => 'mysql',
-    mode   => '0755',
+    ensure  => directory,
+    owner   => 'mysql',
+    group   => 'mysql',
+    mode    => '0755',
+    require => Class['mysql::server'],  # mysql user
   }
 
   $options = {
