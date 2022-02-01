@@ -1,34 +1,35 @@
-## @summary
-##   Install sql database service.
-##
-## @param database
-##   String giving name of database to init.
-## @param password
-##   String giving database password
-
+# @summary
+#   Install sql database service.
+#
+# @param database
+#   String giving name of database to init.
+#
+# @param password
+#   String giving database password
+#
 class ccs_database (
   Optional[String] $database,
-  Optional[String] $password = '',
+  Optional[String] $password = undef,
 ) {
-
+  # XXX this would be better in a site profile
   ## Use first mountpoint that exists, else /home/mysql. TODO hiera?
   $datadirs = [
     '/lsst-ir2db01',
     '/data',
-    '/home'
+    '/home',
   ].filter |$disk| { $facts['mountpoints'][$disk] }
 
-  $datadir0 = pick($datadirs[0], '/home')
+  $datadir0 = pick_default($datadirs[0], '/home')
   $datadir = "${datadir0}/mysql"
   $socket = "${datadir}/mysql.sock"
 
   file { $datadir:
-    ensure => directory,
-    owner  => 'mysql',
-    group  => 'mysql',
-    mode   => '0755',
+    ensure  => directory,
+    owner   => 'mysql',
+    group   => 'mysql',
+    mode    => '0755',
+    require => Class['mysql::server'],  # mysql user
   }
-
 
   $options = {
     'mysqld' => {
@@ -45,7 +46,7 @@ class ccs_database (
     },
   }
 
-  class {'::mysql::server':
+  class { 'mysql::server':
 #    package_name            => 'mariadb-server',
 #    service_name            => 'mariadb',
     package_ensure          => 'present',
@@ -58,8 +59,7 @@ class ccs_database (
     options                 => $options,
   }
 
-
-
+  # XXX this would be better in a site profile
   if empty($password) {
     ## This only happens at slac. Elsewhere, we use private hiera.
     $ccs_dbarchive = lookup('ccs_dbarchive', String)
@@ -69,7 +69,6 @@ class ccs_database (
   } else {
     $db_password = $password
   }
-
 
   if $database and $db_password {
     ## Create empty db called (eg) comcamdbprod;
@@ -88,5 +87,4 @@ class ccs_database (
       collate  => 'latin1_swedish_ci',
     }
   }
-
 }
