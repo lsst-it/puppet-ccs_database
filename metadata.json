@@ -1,10 +1,10 @@
 {
   "name": "lsst-ccs_database",
-  "version": "2.1.1",
+  "version": "2.1.2",
   "author": "AURA/LSST/SLAC",
-  "summary": "",
+  "summary": "CCS specific database configuration",
   "license": "Apache-2.0",
-  "source": "",
+  "source": "https://github.com/lsst-it/puppet-ccs_database",
   "dependencies": [
     {
       "name": "puppetlabs/stdlib",
