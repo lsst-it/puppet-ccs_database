@@ -18,20 +18,20 @@ Install sql database service.
 
 The following parameters are available in the `ccs_database` class:
 
-* [`database`](#database)
-* [`password`](#password)
+* [`database`](#-ccs_database--database)
+* [`password`](#-ccs_database--password)
 
-##### <a name="database"></a>`database`
+##### <a name="-ccs_database--database"></a>`database`
 
 Data type: `Optional[String]`
 
 String giving name of database to init.
 
-##### <a name="password"></a>`password`
+##### <a name="-ccs_database--password"></a>`password`
 
 Data type: `Optional[String]`
 
 String giving database password
 
-Default value: ``undef``
+Default value: `undef`
 
