@@ -46,6 +46,15 @@ class ccs_database (
     },
   }
 
+  ## Default RHEL8 version is 10.3; get the newer version from appstream.
+  if fact('os.release.major') == '8' {
+    package { 'mariadb':
+      ensure   => '10.5',
+      provider => dnfmodule,
+      before   => Class['mysql::server'],
+    }
+  }
+
   class { 'mysql::server':
 #    package_name            => 'mariadb-server',
 #    service_name            => 'mariadb',
