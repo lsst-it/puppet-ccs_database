@@ -4,7 +4,25 @@ All notable changes to this project will be documented in this file.
 Each new release typically also includes the latest modulesync defaults.
 These should not affect the functionality of the module.
 
-## [v2.2.0](https://github.com/lsst-it/puppet-ccs_database/tree/v2.2.0) (2023-01-30)
+## [v3.0.0](https://github.com/lsst-it/puppet-ccs_database/tree/v3.0.0) (2023-06-23)
+
+[Full Changelog](https://github.com/lsst-it/puppet-ccs_database/compare/v2.2.0...v3.0.0)
+
+**Breaking changes:**
+
+- \(plumbing\) drop support for puppet6 [\#15](https://github.com/lsst-it/puppet-ccs_database/pull/15) ([jhoblitt](https://github.com/jhoblitt))
+- \(metadata\) require puppetlabs/mysql \>= 12.0.2 [\#11](https://github.com/lsst-it/puppet-ccs_database/pull/11) ([glennmorris](https://github.com/glennmorris))
+
+**Implemented enhancements:**
+
+- allow puppetlabs/mysql \<= 15 [\#16](https://github.com/lsst-it/puppet-ccs_database/pull/16) ([jhoblitt](https://github.com/jhoblitt))
+- use mariadb 10.5 on rhel8 [\#13](https://github.com/lsst-it/puppet-ccs_database/pull/13) ([glennmorris](https://github.com/glennmorris))
+
+**Closed issues:**
+
+- Use mariadb 10.5 on RHEL8 [\#12](https://github.com/lsst-it/puppet-ccs_database/issues/12)
+
+## [v2.2.0](https://github.com/lsst-it/puppet-ccs_database/tree/v2.2.0) (2023-01-31)
 
 [Full Changelog](https://github.com/lsst-it/puppet-ccs_database/compare/v2.1.2...v2.2.0)
 
