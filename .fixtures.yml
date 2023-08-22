@@ -4,6 +4,4 @@
 fixtures:
   forge_modules:
     stdlib: "puppetlabs/stdlib"
-    mysql:
-      repo: "puppetlabs/mysql"
-      ref: "14.0.0"
+    mysql: "puppetlabs/mysql"
