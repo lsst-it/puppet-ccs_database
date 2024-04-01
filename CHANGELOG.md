@@ -4,6 +4,14 @@ All notable changes to this project will be documented in this file.
 Each new release typically also includes the latest modulesync defaults.
 These should not affect the functionality of the module.
 
+## [v3.2.0](https://github.com/lsst-it/puppet-ccs_database/tree/v3.2.0) (2024-04-01)
+
+[Full Changelog](https://github.com/lsst-it/puppet-ccs_database/compare/v3.1.0...v3.2.0)
+
+**Implemented enhancements:**
+
+- allow password param to be Sensitive [\#26](https://github.com/lsst-it/puppet-ccs_database/pull/26) ([jhoblitt](https://github.com/jhoblitt))
+
 ## [v3.1.0](https://github.com/lsst-it/puppet-ccs_database/tree/v3.1.0) (2023-08-22)
 
 [Full Changelog](https://github.com/lsst-it/puppet-ccs_database/compare/v3.0.0...v3.1.0)
