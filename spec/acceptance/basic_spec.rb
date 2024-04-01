@@ -7,7 +7,7 @@ describe 'ccs_database class' do
     <<-PP
     class{ 'ccs_database':
       database => 'foo',
-      password => 'bar',
+      password => Sensitive('bar'),
     }
     PP
   end
