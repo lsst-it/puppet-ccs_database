@@ -85,7 +85,7 @@ class ccs_database (
     ## TODO: localdb -u to create tables?
     mysql::db { $database:
       user     => 'ccs',
-      password => $db_password,
+      password => $db_password.unwrap,
       ## TODO when doing this by hand, we used both ccs@% and ccs@localhost.
       host     => '%',
       grant    => 'ALL',
