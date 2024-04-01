@@ -8,8 +8,8 @@
 #   String giving database password
 #
 class ccs_database (
-  Optional[String] $database,
-  Optional[String] $password = undef,
+  String[1] $database,
+  Optional[Variant[Sensitive[String[1]],String[1]]] $password = undef,
 ) {
   # XXX this would be better in a site profile
   ## Use first mountpoint that exists, else /home/mysql. TODO hiera?

@@ -23,13 +23,13 @@ The following parameters are available in the `ccs_database` class:
 
 ##### <a name="-ccs_database--database"></a>`database`
 
-Data type: `Optional[String]`
+Data type: `String[1]`
 
 String giving name of database to init.
 
 ##### <a name="-ccs_database--password"></a>`password`
 
-Data type: `Optional[String]`
+Data type: `Optional[Variant[Sensitive[String[1]],String[1]]]`
 
 String giving database password
 
