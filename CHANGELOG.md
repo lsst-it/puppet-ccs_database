@@ -4,7 +4,16 @@ All notable changes to this project will be documented in this file.
 Each new release typically also includes the latest modulesync defaults.
 These should not affect the functionality of the module.
 
-## [v3.2.0](https://github.com/lsst-it/puppet-ccs_database/tree/v3.2.0) (2024-04-01)
+## [v3.3.0](https://github.com/lsst-it/puppet-ccs_database/tree/v3.3.0) (2024-08-05)
+
+[Full Changelog](https://github.com/lsst-it/puppet-ccs_database/compare/v3.2.0...v3.3.0)
+
+**Implemented enhancements:**
+
+- allow puppetlabs/mysql 16.x [\#30](https://github.com/lsst-it/puppet-ccs_database/pull/30) ([jhoblitt](https://github.com/jhoblitt))
+- \(puppet-ccs\_database\) add apache license [\#28](https://github.com/lsst-it/puppet-ccs_database/pull/28) ([dtapiacl](https://github.com/dtapiacl))
+
+## [v3.2.0](https://github.com/lsst-it/puppet-ccs_database/tree/v3.2.0) (2024-04-02)
 
 [Full Changelog](https://github.com/lsst-it/puppet-ccs_database/compare/v3.1.0...v3.2.0)
 
