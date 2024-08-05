@@ -12,7 +12,7 @@
     },
     {
       "name": "puppetlabs/mysql",
-      "version_requirement": ">= 12.0.2 < 16.0.0"
+      "version_requirement": ">= 12.0.2 < 17.0.0"
     }
   ],
   "operatingsystem_support": [
