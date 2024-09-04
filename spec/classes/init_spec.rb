@@ -21,6 +21,16 @@ describe 'ccs_database' do
         it { is_expected.to contain_class('mysql::server') }
         it { is_expected.to have_mysql__db_resource_count(1) }
         it { is_expected.to contain_mysql__db('bar') }
+
+        it do
+          is_expected.to contain_file('/etc/ccs/statusPersister.properties').with(
+            ensure: 'file',
+            mode: '0660',
+            owner: 'ccs',
+            group: 'ccsadm',
+            content: %r{hibernate.connection.password=foo}
+          )
+        end
       end
     end
   end
