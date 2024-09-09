@@ -1,0 +1,11 @@
+<%- | String[1] $url,
+      Variant[Sensitive[String[1]],String[1]] $user,
+      Variant[Sensitive[String[1]],String[1]] $pass,
+| -%>
+# This file is managed by Puppet; changes may be overwritten
+hibernate.connection.url=<%= $url %>
+hibernate.connection.driver_class=com.mysql.jdbc.Driver
+#hibernate.dialect=org.hibernate.dialect.MySQLDialect
+hibernate.dialect=org.hibernate.dialect.MariaDBDialect
+hibernate.connection.username=<%= $user %>
+hibernate.connection.password=<%= $pass %>

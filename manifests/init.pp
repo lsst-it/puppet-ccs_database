@@ -4,12 +4,21 @@
 # @param database
 #   String giving name of database to init.
 #
+# @param user
+#   String giving database user.
+#
 # @param password
 #   String giving database password
 #
+# @param url
+#   String giving url for database access.
+#   Default jdbc:mysql://HOSTNAME:3306/DATABASE.
+#
 class ccs_database (
   String[1] $database,
+  Optional[Variant[Sensitive[String[1]],String[1]]] $user = undef,
   Optional[Variant[Sensitive[String[1]],String[1]]] $password = undef,
+  Optional[String[1]] $url = undef,
 ) {
   # XXX this would be better in a site profile
   ## Use first mountpoint that exists, else /home/mysql. TODO hiera?
@@ -79,12 +88,14 @@ class ccs_database (
     $db_password = $password
   }
 
+  $db_user = pick($user, 'ccs')
+
   if $database and $db_password {
     ## Create empty db called (eg) comcamdbprod;
     ## add ccs account with all privs on that db;
     ## TODO: localdb -u to create tables?
     mysql::db { $database:
-      user     => 'ccs',
+      user     => $db_user.unwrap,
       password => $db_password.unwrap,
       ## TODO when doing this by hand, we used both ccs@% and ccs@localhost.
       host     => '%',
@@ -96,4 +107,10 @@ class ccs_database (
       collate  => 'latin1_swedish_ci',
     }
   }
+
+  $shost = regsubst($facts['networking']['fqdn'], '\..*', '', 'G')
+
+  $db_url = pick($url, "jdbc:mysql://${shost}:3306/${database}")
+
+  include ccs_database::etc
 }

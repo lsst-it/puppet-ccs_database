@@ -7,6 +7,7 @@
 ### Classes
 
 * [`ccs_database`](#ccs_database): Install sql database service.
+* [`ccs_database::etc`](#ccs_database--etc): Configure /etc/ccs for CCS database
 
 ## Classes
 
@@ -19,13 +20,23 @@ Install sql database service.
 The following parameters are available in the `ccs_database` class:
 
 * [`database`](#-ccs_database--database)
+* [`user`](#-ccs_database--user)
 * [`password`](#-ccs_database--password)
+* [`url`](#-ccs_database--url)
 
 ##### <a name="-ccs_database--database"></a>`database`
 
 Data type: `String[1]`
 
 String giving name of database to init.
+
+##### <a name="-ccs_database--user"></a>`user`
+
+Data type: `Optional[Variant[Sensitive[String[1]],String[1]]]`
+
+String giving database user.
+
+Default value: `undef`
 
 ##### <a name="-ccs_database--password"></a>`password`
 
@@ -34,4 +45,17 @@ Data type: `Optional[Variant[Sensitive[String[1]],String[1]]]`
 String giving database password
 
 Default value: `undef`
+
+##### <a name="-ccs_database--url"></a>`url`
+
+Data type: `Optional[String[1]]`
+
+String giving url for database access.
+Default jdbc:mysql://HOSTNAME:3306/DATABASE.
+
+Default value: `undef`
+
+### <a name="ccs_database--etc"></a>`ccs_database::etc`
+
+Configure /etc/ccs for CCS database
 
