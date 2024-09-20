@@ -14,11 +14,15 @@
 #   String giving url for database access.
 #   Default jdbc:mysql://HOSTNAME:3306/DATABASE.
 #
+# @param max_connections
+#   Integer value to use for server max_connections, default 300.
+#
 class ccs_database (
   String[1] $database,
   Optional[Variant[Sensitive[String[1]],String[1]]] $user = undef,
   Optional[Variant[Sensitive[String[1]],String[1]]] $password = undef,
   Optional[String[1]] $url = undef,
+  Integer[1] $max_connections = 300,
 ) {
   # XXX this would be better in a site profile
   ## Use first mountpoint that exists, else /home/mysql. TODO hiera?
@@ -45,6 +49,7 @@ class ccs_database (
       'datadir'                 => $datadir,
       'socket'                  => $socket,
       'innodb_buffer_pool_size' => '1G',
+      'max_connections'         => $max_connections,
       'tmpdir'                  => $facts['mountpoints']['/scratch'] ? {
         undef   => undef,
         default => '/scratch/mysqltmp',
