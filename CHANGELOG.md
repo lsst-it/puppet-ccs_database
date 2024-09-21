@@ -4,6 +4,22 @@ All notable changes to this project will be documented in this file.
 Each new release typically also includes the latest modulesync defaults.
 These should not affect the functionality of the module.
 
+## [v3.5.0](https://github.com/lsst-it/puppet-ccs_database/tree/v3.5.0) (2024-09-21)
+
+[Full Changelog](https://github.com/lsst-it/puppet-ccs_database/compare/v3.4.0...v3.5.0)
+
+**Implemented enhancements:**
+
+- Add database setting max\_connections [\#35](https://github.com/lsst-it/puppet-ccs_database/pull/35) ([glennmorris](https://github.com/glennmorris))
+
+## [v3.4.0](https://github.com/lsst-it/puppet-ccs_database/tree/v3.4.0) (2024-09-09)
+
+[Full Changelog](https://github.com/lsst-it/puppet-ccs_database/compare/v3.3.0...v3.4.0)
+
+**Implemented enhancements:**
+
+- Install statusPersister properties file [\#32](https://github.com/lsst-it/puppet-ccs_database/pull/32) ([glennmorris](https://github.com/glennmorris))
+
 ## [v3.3.0](https://github.com/lsst-it/puppet-ccs_database/tree/v3.3.0) (2024-08-05)
 
 [Full Changelog](https://github.com/lsst-it/puppet-ccs_database/compare/v3.2.0...v3.3.0)
