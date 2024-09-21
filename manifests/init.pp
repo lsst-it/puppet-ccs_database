@@ -67,6 +67,15 @@ class ccs_database (
       provider => dnfmodule,
       before   => Class['mysql::server'],
     }
+    ## Avoid test failure on rhel8 due to conflicting version of mariadb:
+    ##  Cannot alias Package[mysql_client] to [nil, "mariadb", :dnfmodule]
+    ##  at (file: spec/fixtures/modules/mysql/manifests/client/install.pp,
+    ##  line: 8); resource ["Package", nil, "mariadb", :dnfmodule] already
+    ##  declared (file: spec/fixtures/modules/ccs_database/manifests/init.pp,
+    ##  line: 65
+    class { 'mysql::client':
+      package_manage => false,
+    }
   }
 
   class { 'mysql::server':
