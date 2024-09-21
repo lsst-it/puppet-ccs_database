@@ -23,6 +23,7 @@ The following parameters are available in the `ccs_database` class:
 * [`user`](#-ccs_database--user)
 * [`password`](#-ccs_database--password)
 * [`url`](#-ccs_database--url)
+* [`max_connections`](#-ccs_database--max_connections)
 
 ##### <a name="-ccs_database--database"></a>`database`
 
@@ -54,6 +55,14 @@ String giving url for database access.
 Default jdbc:mysql://HOSTNAME:3306/DATABASE.
 
 Default value: `undef`
+
+##### <a name="-ccs_database--max_connections"></a>`max_connections`
+
+Data type: `Integer[1]`
+
+Integer value to use for server max_connections, default 300.
+
+Default value: `300`
 
 ### <a name="ccs_database--etc"></a>`ccs_database::etc`
 
