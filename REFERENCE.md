@@ -7,6 +7,7 @@
 ### Classes
 
 * [`ccs_database`](#ccs_database): Install sql database service.
+* [`ccs_database::cron`](#ccs_database--cron): Ensure localdb future partitions exist
 * [`ccs_database::etc`](#ccs_database--etc): Configure /etc/ccs for CCS database
 
 ## Classes
@@ -24,6 +25,7 @@ The following parameters are available in the `ccs_database` class:
 * [`password`](#-ccs_database--password)
 * [`url`](#-ccs_database--url)
 * [`max_connections`](#-ccs_database--max_connections)
+* [`cronjob_partitions`](#-ccs_database--cronjob_partitions)
 
 ##### <a name="-ccs_database--database"></a>`database`
 
@@ -63,6 +65,18 @@ Data type: `Integer[1]`
 Integer value to use for server max_connections, default 300.
 
 Default value: `300`
+
+##### <a name="-ccs_database--cronjob_partitions"></a>`cronjob_partitions`
+
+Data type: `Boolean`
+
+If true, install cronjob to ensure future partitions exist.
+
+Default value: `false`
+
+### <a name="ccs_database--cron"></a>`ccs_database::cron`
+
+Ensure localdb future partitions exist
 
 ### <a name="ccs_database--etc"></a>`ccs_database::etc`
 
