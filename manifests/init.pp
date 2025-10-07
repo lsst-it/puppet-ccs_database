@@ -17,12 +17,16 @@
 # @param max_connections
 #   Integer value to use for server max_connections, default 300.
 #
+# @param cronjob_partitions
+#   If true, install cronjob to ensure future partitions exist.
+#
 class ccs_database (
   String[1] $database,
   Optional[Variant[Sensitive[String[1]],String[1]]] $user = undef,
   Optional[Variant[Sensitive[String[1]],String[1]]] $password = undef,
   Optional[String[1]] $url = undef,
   Integer[1] $max_connections = 300,
+  Boolean $cronjob_partitions = false,
 ) {
   # XXX this would be better in a site profile
   ## Use first mountpoint that exists, else /home/mysql. TODO hiera?
@@ -127,4 +131,5 @@ class ccs_database (
   $db_url = pick($url, "jdbc:mysql://${shost}:3306/${database}")
 
   include ccs_database::etc
+  include ccs_database::cron
 }
