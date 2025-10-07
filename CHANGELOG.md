@@ -4,6 +4,14 @@ All notable changes to this project will be documented in this file.
 Each new release typically also includes the latest modulesync defaults.
 These should not affect the functionality of the module.
 
+## [v3.6.0](https://github.com/lsst-it/puppet-ccs_database/tree/v3.6.0) (2025-10-07)
+
+[Full Changelog](https://github.com/lsst-it/puppet-ccs_database/compare/v3.5.0...v3.6.0)
+
+**Implemented enhancements:**
+
+- Add option to install cronjob for localdb future partitions [\#52](https://github.com/lsst-it/puppet-ccs_database/pull/52) ([glennmorris](https://github.com/glennmorris))
+
 ## [v3.5.0](https://github.com/lsst-it/puppet-ccs_database/tree/v3.5.0) (2024-09-21)
 
 [Full Changelog](https://github.com/lsst-it/puppet-ccs_database/compare/v3.4.0...v3.5.0)
