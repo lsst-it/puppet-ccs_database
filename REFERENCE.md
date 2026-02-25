@@ -25,7 +25,7 @@ The following parameters are available in the `ccs_database` class:
 * [`password`](#-ccs_database--password)
 * [`url`](#-ccs_database--url)
 * [`max_connections`](#-ccs_database--max_connections)
-* [`cronjob_partitions`](#-ccs_database--cronjob_partitions)
+* [`cronjob_command`](#-ccs_database--cronjob_command)
 
 ##### <a name="-ccs_database--database"></a>`database`
 
@@ -66,13 +66,13 @@ Integer value to use for server max_connections, default 300.
 
 Default value: `300`
 
-##### <a name="-ccs_database--cronjob_partitions"></a>`cronjob_partitions`
+##### <a name="-ccs_database--cronjob_command"></a>`cronjob_command`
 
-Data type: `Boolean`
+Data type: `Optional[String[1]]`
 
-If true, install cronjob to ensure future partitions exist.
+Optional command string to run as weekly cronjob for partitioning.
 
-Default value: `false`
+Default value: `undef`
 
 ### <a name="ccs_database--cron"></a>`ccs_database::cron`
 
