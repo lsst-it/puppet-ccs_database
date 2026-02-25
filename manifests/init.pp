@@ -17,8 +17,8 @@
 # @param max_connections
 #   Integer value to use for server max_connections, default 300.
 #
-# @param cronjob_partitions
-#   If true, install cronjob to ensure future partitions exist.
+# @param cronjob_command
+#   Optional command string to run as weekly cronjob for partitioning.
 #
 class ccs_database (
   String[1] $database,
@@ -26,7 +26,7 @@ class ccs_database (
   Optional[Variant[Sensitive[String[1]],String[1]]] $password = undef,
   Optional[String[1]] $url = undef,
   Integer[1] $max_connections = 300,
-  Boolean $cronjob_partitions = false,
+  Optional[String[1]] $cronjob_command = undef,
 ) {
   # XXX this would be better in a site profile
   ## Use first mountpoint that exists, else /home/mysql. TODO hiera?
