@@ -1,6 +1,6 @@
 {
   "name": "lsst-ccs_database",
-  "version": "3.6.0",
+  "version": "4.0.0",
   "author": "AURA/LSST/SLAC",
   "summary": "CCS specific database configuration",
   "license": "Apache-2.0",
