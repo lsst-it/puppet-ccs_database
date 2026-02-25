@@ -4,6 +4,18 @@ All notable changes to this project will be documented in this file.
 Each new release typically also includes the latest modulesync defaults.
 These should not affect the functionality of the module.
 
+## [v4.0.0](https://github.com/lsst-it/puppet-ccs_database/tree/v4.0.0) (2026-02-25)
+
+[Full Changelog](https://github.com/lsst-it/puppet-ccs_database/compare/v3.6.0...v4.0.0)
+
+**Breaking changes:**
+
+- \(metadata\) drop puppet 7 [\#57](https://github.com/lsst-it/puppet-ccs_database/pull/57) ([glennmorris](https://github.com/glennmorris))
+
+**Implemented enhancements:**
+
+- Allow specification of weekly cronjob command [\#56](https://github.com/lsst-it/puppet-ccs_database/pull/56) ([glennmorris](https://github.com/glennmorris))
+
 ## [v3.6.0](https://github.com/lsst-it/puppet-ccs_database/tree/v3.6.0) (2025-10-07)
 
 [Full Changelog](https://github.com/lsst-it/puppet-ccs_database/compare/v3.5.0...v3.6.0)
