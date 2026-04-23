@@ -17,6 +17,12 @@
 # @param max_connections
 #   Integer value to use for server max_connections, default 300.
 #
+# @param service_enabled
+#  Boolean saying if service should be enabled.
+#
+# @param service_manage
+#  Boolean saying if service state should be managed.
+#
 # @param cronjob_command
 #   Optional command string to run as weekly cronjob for partitioning.
 #
@@ -26,6 +32,8 @@ class ccs_database (
   Optional[Variant[Sensitive[String[1]],String[1]]] $password = undef,
   Optional[String[1]] $url = undef,
   Integer[1] $max_connections = 300,
+  Boolean $service_enabled = true,
+  Boolean $service_manage = true,
   Optional[String[1]] $cronjob_command = undef,
 ) {
   # XXX this would be better in a site profile
@@ -90,8 +98,8 @@ class ccs_database (
     ## Remove some dubious defaults, eg: anonymous user, test database.
     remove_default_accounts => true,
     restart                 => false,
-    service_enabled         => true,
-    service_manage          => true,
+    service_enabled         => $service_enabled,
+    service_manage          => $service_manage,
     options                 => $options,
   }
 
