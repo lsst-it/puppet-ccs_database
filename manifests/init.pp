@@ -90,13 +90,16 @@ class ccs_database (
     }
   }
 
+  ## Avoid errors if service not running.
+  $configure = $service_manage and $service_enabled
+
   class { 'mysql::server':
 #    package_name            => 'mariadb-server',
 #    service_name            => 'mariadb',
     package_ensure          => 'present',
     config_file             => '/etc/my.cnf.d/zzz-lsst-ccs.cnf',
     ## Remove some dubious defaults, eg: anonymous user, test database.
-    remove_default_accounts => true,
+    remove_default_accounts => $configure,
     restart                 => false,
     service_enabled         => $service_enabled,
     service_manage          => $service_manage,
@@ -116,7 +119,7 @@ class ccs_database (
 
   $db_user = pick($user, 'ccs')
 
-  if $database and $db_password {
+  if $database and $db_password and $configure {
     ## Create empty db called (eg) comcamdbprod;
     ## add ccs account with all privs on that db;
     ## TODO: localdb -u to create tables?
