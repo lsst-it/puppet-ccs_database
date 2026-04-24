@@ -4,6 +4,17 @@ All notable changes to this project will be documented in this file.
 Each new release typically also includes the latest modulesync defaults.
 These should not affect the functionality of the module.
 
+## [v4.1.0](https://github.com/lsst-it/puppet-ccs_database/tree/v4.1.0) (2026-04-24)
+
+[Full Changelog](https://github.com/lsst-it/puppet-ccs_database/compare/v4.0.0...v4.1.0)
+
+**Implemented enhancements:**
+
+- Allow specification of service state [\#60](https://github.com/lsst-it/puppet-ccs_database/pull/60) ([glennmorris](https://github.com/glennmorris))
+- Update dependency voxpupuli-test to v14 [\#59](https://github.com/lsst-it/puppet-ccs_database/pull/59) ([renovate[bot]](https://github.com/apps/renovate))
+- Update actions/checkout action to v6 [\#54](https://github.com/lsst-it/puppet-ccs_database/pull/54) ([renovate[bot]](https://github.com/apps/renovate))
+- Update actions/labeler action to v6 [\#47](https://github.com/lsst-it/puppet-ccs_database/pull/47) ([renovate[bot]](https://github.com/apps/renovate))
+
 ## [v4.0.0](https://github.com/lsst-it/puppet-ccs_database/tree/v4.0.0) (2026-02-25)
 
 [Full Changelog](https://github.com/lsst-it/puppet-ccs_database/compare/v3.6.0...v4.0.0)
