@@ -28,7 +28,7 @@ describe 'ccs_database' do
             mode: '0660',
             owner: 'ccs',
             group: 'ccsadm',
-            content: %r{hibernate.connection.password=foo}
+            content: %r{hibernate.connection.password=foo},
           )
         end
       end
