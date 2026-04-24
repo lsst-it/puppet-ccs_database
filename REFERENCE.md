@@ -25,6 +25,8 @@ The following parameters are available in the `ccs_database` class:
 * [`password`](#-ccs_database--password)
 * [`url`](#-ccs_database--url)
 * [`max_connections`](#-ccs_database--max_connections)
+* [`service_enabled`](#-ccs_database--service_enabled)
+* [`service_manage`](#-ccs_database--service_manage)
 * [`cronjob_command`](#-ccs_database--cronjob_command)
 
 ##### <a name="-ccs_database--database"></a>`database`
@@ -65,6 +67,22 @@ Data type: `Integer[1]`
 Integer value to use for server max_connections, default 300.
 
 Default value: `300`
+
+##### <a name="-ccs_database--service_enabled"></a>`service_enabled`
+
+Data type: `Boolean`
+
+Boolean saying if service should be enabled.
+
+Default value: `true`
+
+##### <a name="-ccs_database--service_manage"></a>`service_manage`
+
+Data type: `Boolean`
+
+Boolean saying if service state should be managed.
+
+Default value: `true`
 
 ##### <a name="-ccs_database--cronjob_command"></a>`cronjob_command`
 
